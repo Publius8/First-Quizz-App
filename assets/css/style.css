@@ -1,0 +1,98 @@
+@import url(./reset.css);
+
+:root {
+    --hue-neutral :200;
+    --hue-wrong :0;
+    --hue-correct :145;
+}
+
+body {
+    --hue: var(--hue-neutral);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(var(--hue), 100%,20%);
+}
+
+body.correct {
+    --hue :var(--hue-correct);
+}
+
+body.wrong {
+    --hue :var(--hue-wrong);
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue :var(--hue-neutral);
+    border: 2px solid hsl(var(--hue), 100%, 30%);
+    background-color: 1px solid hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    background-color:cornflowerblue;
+    transition: 0.2s all ease-in;
+}
+
+.btn:hover {
+    border-color: darkorange;
+    background-color: darkblue;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: 0.2s all ease-in;
+}
+
+.start-btn,
+.next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.flexious {
+    display: flex;
+    flex-direction: column;
+}
+
+#spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
